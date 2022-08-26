@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidSimpleDemo"
 include ':app'
+include ':launcher'
