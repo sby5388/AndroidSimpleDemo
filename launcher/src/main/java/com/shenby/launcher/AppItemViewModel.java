@@ -49,6 +49,9 @@ public class AppItemViewModel extends BaseObservable {
         final Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setClassName(info.applicationInfo.packageName, info.name);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        view.getContext().startActivity(intent);
+        final ResolveInfo result = mPackageManager.resolveActivity(intent, PackageManager.MATCH_ALL);
+        if (result != null) {
+            view.getContext().startActivity(intent);
+        }
     }
 }
